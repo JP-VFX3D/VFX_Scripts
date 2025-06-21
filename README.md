@@ -2,7 +2,9 @@
 Basic scripts for use in Maya and Houdini (python and mel).
 
 
+
 Maya (Mel)
+
 ABC_Cleanup
 - Cleans up alembic cache meshes by deleting specific Input attributes; time1 and AlembicNode.
 
@@ -14,6 +16,7 @@ StaticMeshBakeLocator
 
 
 Maya (Python)
+
 meshDisplayAttributeCreate_MetaHumanAdvancedSkeletonRig
 - Creates the meshDisplay attribute with enums; Ultra, High, Medium and Low. Ideal use is for the Advanced Skeleton rig Main controller to switch between lod mesh groups when using MetaHuman NameMatcher template.
 
@@ -23,6 +26,7 @@ meshDisplaySwitch_MetaHumanAdvancedSkeletonRig
 
 
 Houdini (Python)
+
 BakeParentedCamera
 - Bake parented camera animation, whether it's constrained with null locators or other methods.
 
