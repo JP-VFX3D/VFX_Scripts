@@ -1,2 +1,2 @@
 # VFX_Scripts
-Basic Python scripts to use in Maya and Houdini.
+Basic scripts to use in Maya and Houdini (python and mel).
