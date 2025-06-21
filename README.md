@@ -18,10 +18,10 @@ StaticMeshBakeLocator
 Maya (Python)
 
 meshDisplayAttributeCreate_MetaHumanAdvancedSkeletonRig
-- Creates the meshDisplay attribute with enums; Ultra, High, Medium and Low. Ideal use is for the Advanced Skeleton rig Main controller to switch between lod mesh groups when using MetaHuman NameMatcher template.
+- Creates the meshDisplay attribute with enums; Ultra, High, Medium and Low. Ideal use is for the selected Advanced Skeleton rig Main controller to switch between lod mesh groups when using MetaHuman NameMatcher template.
 
 meshDisplaySwitch_MetaHumanAdvancedSkeletonRig
-- Assigns the default MetaHuman lod mesh groups (lod0-lod3) with the meshDisplay attribute and a different enum (Ultra, High, Medium and Low) for the Advanced Skeleton rig Main controller. Use after running the meshDisplayAttributeCreate script. Then go to the Channel Box and use the MeshDisplay switch.
+- Assigns the default MetaHuman lod mesh groups (lod0-lod3) with the meshDisplay attribute and a different enum (Ultra, High, Medium and Low) for the Advanced Skeleton rig Main controller. Use after running the meshDisplayAttributeCreate script with the Main controller selected. Then go to the Channel Box and use the MeshDisplay switch.
 
 
 
