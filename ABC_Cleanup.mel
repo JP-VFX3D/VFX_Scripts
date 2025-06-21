@@ -1,0 +1,8 @@
+string $sel[] = `ls -sl`; // Get selected objects
+for ($obj in $sel) {
+    string $abcNode[] = `listConnections -type "AlembicNode" $obj`;
+    if (size($abcNode) > 0) {
+        bakePartialHistory -prePostDeformers $obj; // Bake history before deletion
+        delete $abcNode; // Delete the AlembicNode
+    }
+}

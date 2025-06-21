@@ -1,0 +1,11 @@
+string $meshes[] = `ls -type "mesh" -long`;
+string $transforms[];
+
+for ($mesh in $meshes) {
+    string $parent[] = `listRelatives -parent $mesh`;
+    if (size($parent) > 0) {
+        $transforms[size($transforms)] = $parent[0];
+    }
+}
+
+select -r $transforms;

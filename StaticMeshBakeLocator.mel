@@ -1,0 +1,53 @@
+// Select all KTransforms in the scene
+string $meshes[] = `ls -type "mesh" -long`;
+string $transforms[];
+
+for ($mesh in $meshes) {
+    string $parent[] = `listRelatives -parent $mesh`;
+    if (size($parent) > 0) {
+        $transforms[`size $transforms`] = $parent[0]; // Correct way to append to an array
+    }
+}
+
+select -r $transforms;
+
+// Iterate through each selected transform
+string $selected[] = `ls -sl -long`;
+
+for ($obj in $selected) {
+    float $tx = `getAttr ($obj + ".translateX")`;
+    float $ty = `getAttr ($obj + ".translateY")`;
+    float $tz = `getAttr ($obj + ".translateZ")`;
+
+    float $rx = `getAttr ($obj + ".rotateX")`;
+    float $ry = `getAttr ($obj + ".rotateY")`;
+    float $rz = `getAttr ($obj + ".rotateZ")`;
+
+    float $sx = `getAttr ($obj + ".scaleX")`;
+    float $sy = `getAttr ($obj + ".scaleY")`;
+    float $sz = `getAttr ($obj + ".scaleZ")`;
+
+    // Only create a locator if there is an offset in translation, rotation, or scale
+    if ($tx != 0 || $ty != 0 || $tz != 0 || 
+        $rx != 0 || $ry != 0 || $rz != 0 || 
+        $sx != 1 || $sy != 1 || $sz != 1) {
+
+        string $locator[] = `spaceLocator -name ($obj + "_baked_LOC")`; // Fix: Assign locator as an array
+        string $locName = $locator[0]; // Extract name from array
+
+        // Match the locator to the transform's position
+        setAttr ($locName + ".translateX") $tx;
+        setAttr ($locName + ".translateY") $ty;
+        setAttr ($locName + ".translateZ") $tz;
+
+        // Apply rotation
+        setAttr ($locName + ".rotateX") $rx;
+        setAttr ($locName + ".rotateY") $ry;
+        setAttr ($locName + ".rotateZ") $rz;
+
+        // Apply scale
+        setAttr ($locName + ".scaleX") $sx;
+        setAttr ($locName + ".scaleY") $sy;
+        setAttr ($locName + ".scaleZ") $sz;
+    }
+}
