@@ -1,5 +1,5 @@
 # VFX_Scripts
-Niche scripts to use in Maya (Python and Mel) and Houdini (Python).
+Niche scripts to use in Maya (Python and Mel) and Houdini (Python). Compatible with Maya 2025.3 and Houdini 20.5.
 
 
 
