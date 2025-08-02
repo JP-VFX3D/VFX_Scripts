@@ -23,7 +23,8 @@ meshDisplayAttributeCreate_MetaHumanAdvancedSkeletonRig
 meshDisplaySwitch_MetaHumanAdvancedSkeletonRig
 - Assigns the default MetaHuman lod mesh groups (lod0-lod3) with the meshDisplay attribute and a different enum (Ultra, High, Medium and Low) for the Advanced Skeleton rig Main controller. Use after running the meshDisplayAttributeCreate script with the Main controller selected. Then go to the Channel Box and use the MeshDisplay switch.
 
-
+RenameGeoTransforms
+- Renames geometry Transforms that have packed1 in it's name to Render_Geo. This only works after importing alembics when using Houdini to output that data which used a custom path attribute string via Primitive Attribute Wrangle node. The mesh name is preserved from the path attribute, but transform names imports into Maya as packed1.
 
 Houdini (Python)
 
